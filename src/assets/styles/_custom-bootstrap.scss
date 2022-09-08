@@ -1,0 +1,189 @@
+@import "~bootstrap/scss/functions";
+
+// Customization Bootstrap
+$enable-cssgrid: true;
+
+// grays colors
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$list-grays: (
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900
+);
+
+$green: #39C639;
+$green-100: #E9FCE9;
+$green-200: #A7F1A7;
+$green-300: #81E481;
+$green-400: #5AD85A;
+$green-500: $green;
+$green-600: #2E9E2E;
+$green-700: #227722;
+$green-800: #174F17;
+$green-900: #0B280B;
+
+// theme colors
+$primary: #056EE0;
+$primary-light: #E9F9FC;
+$secondary: #6CDBEB; // no se modificaron, no se usarán de momento
+$success: $green;
+$info: #0dcaf0; // no se mod ificaron, no se usarán de momento
+$warning: #FFC107;
+$danger: #B00020;
+$danger-light: #FF3D22;
+$light: #F8F9FA;
+$dark: #282828;
+
+$theme-colors: (
+  "primary": $primary,
+  "primary-light": $primary-light,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "danger-light": $danger-light,
+  "light": $light,
+  "dark": $dark,
+);
+
+// $custom-colors: (
+//   "custom": #000000,
+// );
+
+// btn
+$btn-padding-y: 9.5px;
+$btn-padding-x: 24px;
+
+$btn-padding-y-sm: 6px;
+$btn-padding-x-sm: 12px;
+
+$btn-padding-y-lg: 9.5px;
+$btn-padding-x-lg: 24px;
+
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-active-box-shadow: none;
+
+$btn-border-radius: 6px;
+$btn-border-radius-sm: 4px;
+$btn-border-radius-lg: 8px;
+
+$btn-font-weight: 500;
+
+// navbar
+$navbar-light-active-color: $info;
+
+// offcanvas
+$offcanvas-transition-duration: 0.4s;
+
+// Custom Typography
+$font-family-sans-serif: "Roboto",
+  sans-serif;
+
+$headings-font-family: "Gordita",
+  sans-serif;
+
+// $h1-font-size: 3rem;
+// $h2-font-size: 2rem;
+// $h3-font-size: 1.5rem;
+// $h4-font-size: 1.25rem;
+// $h5-font-size: 1rem;
+// $h6-font-size: 0.8rem;
+
+@import "~bootstrap/scss/variables";
+
+// $theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "~bootstrap/scss/mixins";
+
+// Utilities
+@import "~bootstrap/scss/utilities";
+
+$all-colors: map-merge-multiple($blues,
+    $indigos,
+    $purples,
+    $pinks,
+    $reds,
+    $oranges,
+    $yellows,
+    $greens,
+    $teals,
+    $cyans,
+    $list-grays );
+
+$utilities: map-merge($utilities,
+    ("color": map-merge(map-get($utilities, "color"),
+        (values: map-merge(map-get(map-get($utilities, "color"), "values"),
+            ($all-colors ),
+          ),
+        ),
+      ),
+    ));
+
+$utilities: map-merge($utilities,
+    ("background-color": map-merge(map-get($utilities, "background-color"),
+        (values: map-merge(map-get(map-get($utilities, "background-color"), "values"),
+            ($all-colors ),
+          ),
+        ),
+      ),
+    ));
+
+@import "~bootstrap/scss/utilities/api";
+
+// Layout & components Bootstrap
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/placeholders";
+
+// Helpers
+@import "~bootstrap/scss/helpers";
+
+
+@import "~bootstrap";
